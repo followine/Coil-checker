@@ -1,1 +1,1 @@
-# Coil-checker
+# Coil checker
