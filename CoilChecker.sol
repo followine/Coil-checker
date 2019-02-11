@@ -6,7 +6,7 @@ pragma solidity ^0.5.1;
 
 contract CoilChecker {
 
-	mapping (uint256 => bool) coils;
+	mapping (string => bool) coils;
 	address owner;
 
 	constructor() public {
@@ -18,7 +18,7 @@ contract CoilChecker {
 		_;
 	}
 
-    function addCoil(uint256 _id) public onlyOwner {
+    function addCoil(string memory _id) public onlyOwner {
         coils[_id] = true;
     }
 
@@ -26,13 +26,13 @@ contract CoilChecker {
         owner = _newOwner;
     }
 
-	function removeCoil(uint256 _id) public onlyOwner {
+	function removeCoil(string memory _id) public onlyOwner {
         coils[_id] = false;
     }
 
-	function getCoil(uint256 _id) public view returns (bool coilStatus) {
+	function getCoil(string memory _id) public view returns (bool coilStatus) {
         return coils[_id];
     }
 
 }
-// 0x57fF3F3226123A13116350C76ACFE7280754Ae4d
+//
